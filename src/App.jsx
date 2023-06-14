@@ -17,7 +17,7 @@ const App = () => {
   const contentChangeHandler = (event) => {
     setContent(event.target.value);
   };
-
+  //새로고침 방지
   const onSubmitHandler = (event) => {
     event.preventDefault();
   };
@@ -39,7 +39,7 @@ const App = () => {
     const newList = todo.filter((item) => item.id !== removeList);
     setTodo(newList);
   };
-  //list 완료하기
+  //list 완료,취소버튼 (isDone 상태 토글)
   const clickCompleteButtonHandler = (clearTodo) => {
     const doneTodo = todo.map((item) => {
       if (item.id === clearTodo) {
@@ -52,7 +52,7 @@ const App = () => {
     });
     setTodo(doneTodo);
   };
-
+  // 작업목록을 "Working"과 "Done"으로 분류하기
   const workingTodos = todo.filter((item) => !item.isDone);
   const doneTodos = todo.filter((item) => item.isDone);
 
