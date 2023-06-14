@@ -3,8 +3,8 @@ import "./App.css";
 
 const App = () => {
   const [todo, setTodo] = useState([
-    { id: 1, title: "오늘 할일", content: "리액트 기초 공부하기", done: false },
-    { id: 2, title: "오늘 할일", content: "마트가서 장 보기", done: true },
+    { id: 1, title: "오늘 할일", content: "리액트 기초 공부하기", isDone: false },
+    { id: 2, title: "오늘 할일", content: "마트가서 장 보기", isDone: true },
   ]);
 
   const [title, setTitle] = useState("");
@@ -21,16 +21,16 @@ const App = () => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
   };
-
   //추가하기 버튼
   const clickAddButtonHandler = () => {
     const newTodo = {
       id: todo.length + 1,
       title,
       content,
-      done: false,
+      isDone: false,
     };
     setTodo([...todo, newTodo]);
+    //다시 빈 값으로 바뀌도록 구성
     setTitle("");
     setContent("");
   };
@@ -45,13 +45,16 @@ const App = () => {
       if (item.id === clearTodo) {
         return {
           ...item,
-          done: !item.done,
+          isDone: !item.isDone,
         };
       }
       return item;
     });
     setTodo(doneTodo);
   };
+
+  const workingTodos = todo.filter((item) => !item.isDone);
+  const doneTodos = todo.filter((item) => item.isDone);
 
   return (
     <div className="layout">
@@ -70,47 +73,37 @@ const App = () => {
       <div className="list">
         <h2>📌Working</h2>
         <div className="list-wrap">
-          {todo.map((item) => {
-            if (!item.done) {
-              return (
-                <div key={item.id} className="list-style">
-                  <h2>{item.title}</h2>
-                  <div>{item.content}</div>
-                  <div className="bth-group">
-                    <button className="remove-btn" onClick={() => clickRemoveButtonHandler(item.id)}>
-                      삭제하기
-                    </button>
-                    <button className="isDone-btn" onClick={() => clickCompleteButtonHandler(item.id)}>
-                      완료
-                    </button>
-                  </div>
-                </div>
-              );
-            }
-            return null;
-          })}
+          {workingTodos.map((item) => (
+            <div key={item.id} className="list-style">
+              <h2>{item.title}</h2>
+              <div>{item.content}</div>
+              <div className="bth-group">
+                <button className="remove-btn" onClick={() => clickRemoveButtonHandler(item.id)}>
+                  삭제하기
+                </button>
+                <button className="isDone-btn" onClick={() => clickCompleteButtonHandler(item.id)}>
+                  {item.isDone ? "취소" : "완료"}
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
         <h2>✅Done</h2>
         <div className="list-wrap">
-          {todo.map((item) => {
-            if (item.done) {
-              return (
-                <div key={item.id} className="list-style">
-                  <h2>{item.title}</h2>
-                  <div>{item.content}</div>
-                  <div className="bth-group">
-                    <button className="remove-btn" onClick={() => clickRemoveButtonHandler(item.id)}>
-                      삭제하기
-                    </button>
-                    <button className="cancel-btn" onClick={() => clickCompleteButtonHandler(item.id)}>
-                      취소
-                    </button>
-                  </div>
-                </div>
-              );
-            }
-            return null;
-          })}
+          {doneTodos.map((item) => (
+            <div key={item.id} className="list-style">
+              <h2>{item.title}</h2>
+              <div>{item.content}</div>
+              <div className="bth-group">
+                <button className="remove-btn" onClick={() => clickRemoveButtonHandler(item.id)}>
+                  삭제하기
+                </button>
+                <button className="cancel-btn" onClick={() => clickCompleteButtonHandler(item.id)}>
+                  취소
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
