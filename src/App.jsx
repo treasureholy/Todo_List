@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "./App.css";
+import "./App.css";
 
 const App = () => {
   const [todo, setTodo] = useState([
@@ -18,6 +18,9 @@ const App = () => {
     setContent(event.target.value);
   };
 
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+  };
   //추가하기 버튼
   const clickAddButtonHandler = () => {
     const newTodo = {
@@ -34,15 +37,20 @@ const App = () => {
     setTodo(newList);
   };
 
+  //list 완료하기
+  // const clickCompleteButtonHandler = () => {
+
+  // }
+
   return (
     <div className="layout">
       <div className="app-title">
         <div>My Todo List</div> <div>React</div>
       </div>
-      <form className="form">
+      <form className="form" onSubmit={onSubmitHandler}>
         <div className="input-group">
-          제목 <input type="text" value={title} onChange={titleChangeHandler} />
-          내용 <input type="text" value={content} onChange={contentChangeHandler} />
+          <b>제목</b> <input className="input-style" type="text" value={title} onChange={titleChangeHandler} />
+          <b>내용</b> <input className="input-style" type="text" value={content} onChange={contentChangeHandler} />
         </div>
         <button className="add-button" onClick={clickAddButtonHandler}>
           추가하기
@@ -54,8 +62,10 @@ const App = () => {
           {todo.map((item) => {
             return (
               <div key={item.id} className="list-style">
-                {item.title}:{item.content}
+                <h2>{item.title}</h2>
+                <div>{item.content}</div>
                 <button
+                  className="remove-btn"
                   onClick={() => {
                     clickRemoveButtonHandler(item.id);
                   }}
