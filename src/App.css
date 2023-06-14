@@ -49,7 +49,7 @@
 
 /* list */
 .list-style {
-  width: 280px;
+  width: 250px;
   height: 180px;
   border: 4px solid green;
   border-radius: 10px;
@@ -66,13 +66,36 @@
   gap: 30px;
 }
 
+.bth-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
 /* 삭제하기 버튼 */
 .remove-btn {
   border-radius: 10px;
   border: 2px solid red;
   background-color: white;
-  width: 100px;
+  width: 120px;
   height: 35px;
   cursor: pointer;
-  margin-top: 15px;
+}
+/* 완료 버튼 */
+.isDone-btn {
+  border-radius: 10px;
+  border: 2px solid green;
+  background-color: white;
+  width: 120px;
+  height: 35px;
+  cursor: pointer;
+}
+
+/* 취소버튼 */
+.cancel-btn {
+  border-radius: 10px;
+  border: 2px solid green;
+  background-color: white;
+  width: 120px;
+  height: 35px;
+  cursor: pointer;
 }

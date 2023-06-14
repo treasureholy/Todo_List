@@ -3,8 +3,8 @@ import "./App.css";
 
 const App = () => {
   const [todo, setTodo] = useState([
-    { id: 1, title: "오늘 할일", content: "공부하기" },
-    { id: 2, title: "오늘 할일", content: "장 보기" },
+    { id: 1, title: "오늘 할일", content: "리액트 기초 공부하기", done: false },
+    { id: 2, title: "오늘 할일", content: "마트가서 장 보기", done: true },
   ]);
 
   const [title, setTitle] = useState("");
@@ -21,26 +21,37 @@ const App = () => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
   };
+
   //추가하기 버튼
   const clickAddButtonHandler = () => {
     const newTodo = {
       id: todo.length + 1,
       title,
       content,
+      done: false,
     };
     setTodo([...todo, newTodo]);
+    setTitle("");
+    setContent("");
   };
-
   //list 삭제하기
   const clickRemoveButtonHandler = (removeList) => {
     const newList = todo.filter((item) => item.id !== removeList);
     setTodo(newList);
   };
-
   //list 완료하기
-  // const clickCompleteButtonHandler = () => {
-
-  // }
+  const clickCompleteButtonHandler = (clearTodo) => {
+    const doneTodo = todo.map((item) => {
+      if (item.id === clearTodo) {
+        return {
+          ...item,
+          done: !item.done,
+        };
+      }
+      return item;
+    });
+    setTodo(doneTodo);
+  };
 
   return (
     <div className="layout">
@@ -60,25 +71,50 @@ const App = () => {
         <h2>📌Working</h2>
         <div className="list-wrap">
           {todo.map((item) => {
-            return (
-              <div key={item.id} className="list-style">
-                <h2>{item.title}</h2>
-                <div>{item.content}</div>
-                <button
-                  className="remove-btn"
-                  onClick={() => {
-                    clickRemoveButtonHandler(item.id);
-                  }}
-                >
-                  삭제하기
-                </button>
-              </div>
-            );
+            if (!item.done) {
+              return (
+                <div key={item.id} className="list-style">
+                  <h2>{item.title}</h2>
+                  <div>{item.content}</div>
+                  <div className="bth-group">
+                    <button className="remove-btn" onClick={() => clickRemoveButtonHandler(item.id)}>
+                      삭제하기
+                    </button>
+                    <button className="isDone-btn" onClick={() => clickCompleteButtonHandler(item.id)}>
+                      완료
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+            return null;
           })}
         </div>
         <h2>✅Done</h2>
+        <div className="list-wrap">
+          {todo.map((item) => {
+            if (item.done) {
+              return (
+                <div key={item.id} className="list-style">
+                  <h2>{item.title}</h2>
+                  <div>{item.content}</div>
+                  <div className="bth-group">
+                    <button className="remove-btn" onClick={() => clickRemoveButtonHandler(item.id)}>
+                      삭제하기
+                    </button>
+                    <button className="cancel-btn" onClick={() => clickCompleteButtonHandler(item.id)}>
+                      취소
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+            return null;
+          })}
+        </div>
       </div>
     </div>
   );
 };
+
 export default App;
