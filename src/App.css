@@ -48,6 +48,12 @@
 }
 
 /* list */
+.list-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
 .list-style {
   width: 250px;
   height: 180px;
@@ -58,12 +64,6 @@
   justify-content: center;
   flex-direction: column;
   padding: 0px 15px;
-}
-
-.list-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
 }
 
 .bth-group {

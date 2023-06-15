@@ -74,18 +74,12 @@ const App = () => {
         <h2>📌Working</h2>
         <div className="list-wrap">
           {workingTodos.map((item) => (
-            <div key={item.id} className="list-style">
-              <h2>{item.title}</h2>
-              <div>{item.content}</div>
-              <div className="bth-group">
-                <button className="remove-btn" onClick={() => clickRemoveButtonHandler(item.id)}>
-                  삭제하기
-                </button>
-                <button className="isDone-btn" onClick={() => clickCompleteButtonHandler(item.id)}>
-                  {item.isDone ? "취소" : "완료"}
-                </button>
-              </div>
-            </div>
+            <Working
+              key={item.id}
+              item={item}
+              removeFuntion={clickRemoveButtonHandler}
+              CompleteFuntion={clickCompleteButtonHandler}
+            />
           ))}
         </div>
         <h2>✅Done</h2>
@@ -110,4 +104,20 @@ const App = () => {
   );
 };
 
+const Working = ({ item, removeFuntion, CompleteFuntion }) => {
+  return (
+    <div key={item.id} className="list-style">
+      <h2>{item.title}</h2>
+      <div>{item.content}</div>
+      <div className="bth-group">
+        <button className="remove-btn" onClick={() => removeFuntion(item.id)}>
+          삭제하기
+        </button>
+        <button className="isDone-btn" onClick={() => CompleteFuntion(item.id)}>
+          {item.isDone ? "취소" : "완료"}
+        </button>
+      </div>
+    </div>
+  );
+};
 export default App;
