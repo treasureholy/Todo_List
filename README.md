@@ -22,10 +22,10 @@ React를 사용하여 TodoList 만들기
 
 ## 2.컴포넌트
 
-* App : 메인 컴포넌트
-* Title : 페이지의 타이틀 컴포넌트
-* FormInput : 입력값을 받아 Todo를 추가하는 컴포넌트
-* Todo : TodoList의 상태변경/삭제가 가능한 컴포넌트
+* Header : 페이지의 타이틀 컴포넌트
+* Layout : 페이지 전체 컨텐츠를 감싸고 있는 레이아웃 컴포넌트
+* Form : 입력값을 받아 Todo를 추가하는 컴포넌트
+* Content : TodoList의 상태변경/삭제가 가능한 컴포넌트
 
   
 ## 3.프로젝트 시연영상
