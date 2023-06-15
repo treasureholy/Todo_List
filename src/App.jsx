@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Title from "components/Title";
 import Todo from "components/Todo";
 
 const App = () => {
@@ -59,9 +60,7 @@ const App = () => {
 
   return (
     <div className="layout">
-      <div className="app-title">
-        <div>My Todo List</div> <div>React</div>
-      </div>
+      <Title />
       <form className="form" onSubmit={onSubmitHandler}>
         <div className="input-group">
           <b>제목</b> <input className="input-style" type="text" value={title} onChange={titleChangeHandler} />
