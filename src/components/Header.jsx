@@ -1,4 +1,5 @@
-const Title = () => {
+import React from "react";
+const Header = () => {
   return (
     <div className="app-title">
       <div>My Todo List</div> <div>React</div>
@@ -6,4 +7,4 @@ const Title = () => {
   );
 };
 
-export default Title;
+export default Header;
