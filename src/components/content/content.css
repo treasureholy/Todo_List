@@ -1,59 +1,9 @@
-.layout {
-  max-width: 1200px;
-  min-width: 800px;
-  margin: 0 auto;
-}
-
-.app-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 30px;
-  border: 1px solid rgba(128, 128, 128, 0.293);
-  padding: 5px 20px;
-}
-
-/* Todo 기록하기 */
-.form {
-  background-color: rgba(231, 230, 230, 0.512);
-  border-radius: 20px;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-  padding: 30px 20px 30px 20px;
-}
-
-.input-group {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 20px;
-}
-
-.input-style {
-  height: 30px;
-  border: 1px solid rgba(128, 128, 128, 0.293);
-  border-radius: 10px;
-  width: 200px;
-}
-/* Todo 추가 버튼 */
-.add-button {
-  border-radius: 10px;
-  border: 1px solid;
-  background-color: green;
-  color: white;
-  width: 100px;
-  height: 35px;
-  cursor: pointer;
-}
-
 /* list */
 .list-wrap {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
 }
-
 .list-style {
   width: 250px;
   height: 180px;
@@ -65,12 +15,12 @@
   flex-direction: column;
   padding: 0px 15px;
 }
-
 .bth-group {
   display: flex;
   gap: 10px;
   margin-top: 15px;
 }
+
 /* 삭제하기 버튼 */
 .remove-btn {
   border-radius: 10px;

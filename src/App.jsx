@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import "./App.css";
-import Layout from "components/Layout";
-import Header from "components/Header";
-import Form from "components/Form";
-import Content from "components/content";
+import Layout from "components/layout/Layout";
+import Header from "components/header/Header";
+import Form from "components/Form/Form";
+import Content from "components/content/content";
 
 const App = () => {
   const [todos, setTodos] = useState([

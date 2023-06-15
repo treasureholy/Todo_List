@@ -1,4 +1,5 @@
 import React from "react";
+import "./content.css";
 
 function Content({ todos, setTodos }) {
   //list 삭제하기
