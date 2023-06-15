@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Title from "components/Title";
+import FormInput from "components/FormInput";
 import Todo from "components/Todo";
 
 const App = () => {
@@ -61,15 +62,14 @@ const App = () => {
   return (
     <div className="layout">
       <Title />
-      <form className="form" onSubmit={onSubmitHandler}>
-        <div className="input-group">
-          <b>제목</b> <input className="input-style" type="text" value={title} onChange={titleChangeHandler} />
-          <b>내용</b> <input className="input-style" type="text" value={content} onChange={contentChangeHandler} />
-        </div>
-        <button className="add-button" onClick={clickAddButtonHandler}>
-          추가하기
-        </button>
-      </form>
+      <FormInput
+        onSubmitHandler={onSubmitHandler}
+        title={title}
+        content={content}
+        titleChangeHandler={titleChangeHandler}
+        contentChangeHandler={contentChangeHandler}
+        clickAddButtonHandler={clickAddButtonHandler}
+      />
       <div className="list">
         <h2>📌Working</h2>
         <div className="list-wrap">
