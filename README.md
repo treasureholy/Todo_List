@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# :pencil:My Todo List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Create React App Project 23.06.12~.6.15
 
-## Available Scripts
+## 1.프로젝트 소개
 
-In the project directory, you can run:
+React를 사용하여 TodoList 만들기
 
-### `npm start`
+* 프로젝트 목표
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  1. 컴포넌트와 리액트 훅 요소를 다룰 수 있습니다
+  2. 이벤트를 관리할 수 있습니다
+  3. 컴포넌트를 분리해서 독립적인 컴포넌트를 유지,보수 할 수 있습니다
+ 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* 메인페이지 기능 
 
-### `npm test`
+  1. UI 구현하기
+  2. Todo 추가 하기
+  3. Todo 삭제 하기
+  4. Todo 완료 상태 변경하기 (완료 ↔ 진행중) 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 2.컴포넌트
 
-### `npm run build`
+* App : 메인 컴포넌트
+* Title : 페이지의 타이틀 컴포넌트
+* FormInput : 입력값을 받아 Todo를 추가하는 컴포넌트
+* Todo : TodoList의 상태변경/삭제가 가능한 컴포넌트
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  
+## 3.프로젝트 시연영상
+![미디어1_AdobeExpress](https://github.com/treasureholy/FilmHunt/assets/130212469/3f35e562-55e8-463c-901e-b8076fc6b2c9)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 4.기술 스택
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"><img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
